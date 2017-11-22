@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <form action="newArticle" method="post">
+    <form action="{{url('new')}}" method="post">
         {{csrf_field()}}
         <div class="form-group">
             <label >Title</label>
