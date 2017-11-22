@@ -15,10 +15,11 @@ class articleCont extends Controller
     		$article = new Article();
     		$article->title = $request->input('title');
     		$article->body = $request->input('body');
-    		$article->author =Auth::user()->id;
+    		$article->user_id =Auth::user()->id;
     		$article->save();
     		//rediect('');
     	}
     	return view('newArticle');
     }
+   
 }
