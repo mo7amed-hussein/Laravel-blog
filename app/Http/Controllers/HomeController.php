@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $articles = Article::orderBy('created_at','desc')->get();
-        $comments = Comment::orderBy('created_at','desc')->get();
+        $comments = Comment::orderBy('created_at','desc')->take(10)->get();
 
         //dd($articles);
         return view('home',['articles'=>$articles ,'comments'=>$comments]);

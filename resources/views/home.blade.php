@@ -39,13 +39,28 @@
                   <h3 class="panel-title">Recent Comments</h3>
                 </div>
                 <div class="panel-body">
-                  <table class="table">
-                  @foreach($comments as $c)
-               <tr><td> <p>{{$c->body}}</p>
-                    by {{$c->user->name}} on {{date('F d, Y', strtotime($c->created_at))}}
-                </td></tr>
+                  
+                @foreach($comments as $c)
+                  <div class="comment">
+                    <?php 
+                    $body = $c->body;
+                    if(strlen( $body ) > 30) 
+                {
+                $body = substr($body, 0,30);
+                $body = substr($body, 0,strrpos($body,' '));
+                $body = $body.'...';
+                }
+                  
+             
+                    ?>
+                   <p>{{$body}} 
+                     <small><a href="{{ route('read',['id'=> $c->article_id])}} ">More</a> </small>
+                   </p>
+                  <small class="info">  by {{$c->user->name}} on {{date('F d, Y', strtotime($c->created_at))}}
+                    </small>
+                </div>
                @endforeach
-               </table>
+               </div>
                 </div>
           </div>
                

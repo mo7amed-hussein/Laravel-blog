@@ -1,0 +1,54 @@
+.article-block
+{
+	background: white;
+	padding: 10px;
+	padding-left: 10px;
+	border-left: 3px solid #a21b24;
+	margin-bottom: 10px;
+
+}
+
+.article-block .info
+{
+	color: #aaa;
+	font-style: italic;
+	margin: 0;
+	padding: 0;
+}
+.article-block h4
+{
+	padding: 0 auto;
+	margin: 0;
+	font-weight: bold;
+}
+
+.article-heading
+{
+	padding: 0 auto;
+	margin: 0 auto;
+	font-weight: bold;
+	color: black;
+}
+
+.comment
+{
+	padding: 10px;
+	padding-left: 10px;
+	border-bottom:1px solid #a21b24;
+	margin-bottom: 10px;
+	background: white;
+}
+
+.comment p
+{
+	padding: 0 auto;
+	margin: 0;
+	font-weight: bold;
+}
+
+.article-body
+{
+	background: white;
+	padding: 20px;
+	margin-bottom: 10px;
+}

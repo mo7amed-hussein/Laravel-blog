@@ -18,6 +18,7 @@ class articleCont extends Controller
     {
     	if($request->isMethod('post'))
     	{
+            $this->validate($request,['title'=> 'required | min:25' ,'body'=>'required | min:255']);
     		$article = new Article();
     		$article->title = $request->input('title');
     		$article->body = $request->input('body');
