@@ -38,7 +38,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
-                        <li><a href="">Articles</a></li>
+                        <li><a href="{{ route('home') }}">Articles</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

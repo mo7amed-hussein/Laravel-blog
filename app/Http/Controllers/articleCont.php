@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Article;
+use App\Comment;
 
 class articleCont extends Controller
 {
@@ -24,6 +25,15 @@ class articleCont extends Controller
 
     public function readArticle(Request $request,$id)
     {
+        if($request->isMethod('post'))
+        {
+            $comment = new Comment();
+            $comment->body = $request->input('body');
+            $comment->user_id =Auth::user()->id;
+            $comment->article_id = $id;
+            $comment->save();
+            //rediect('');
+        }
         $ar = Article::find($id);
         return view('viewArticle',['article'=>$ar]);
     }
