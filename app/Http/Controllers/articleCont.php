@@ -21,5 +21,11 @@ class articleCont extends Controller
     	}
     	return view('newArticle');
     }
+
+    public function readArticle(Request $request,$id)
+    {
+        $ar = Article::find($id);
+        return view('viewArticle',['article'=>$ar]);
+    }
    
 }

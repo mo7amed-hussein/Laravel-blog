@@ -7,7 +7,7 @@
             @foreach($articles as $ar)
 
         <article class="article-block">
-            <p>{{$ar->title}}</p>
+            <p> <a href="{{ route('read',['id'=> $ar->id])}} ">{{$ar->title}} </a></p>
             <div class="info">
                 posted by {{$ar->user->name}} on {{date('F d, Y', strtotime($ar->created_at))}}
             </div>
@@ -21,8 +21,11 @@
 
                 }
 
-                echo $bodyStr.'...<a href="/this/story">Read More</a>';
-                ?>
+             echo $bodyStr.'...';
+             ?>
+
+             <a href="{{ route('read',['id'=> $ar->id])}} ">Read More</a>';
+                
             </div>
         </article>
 
