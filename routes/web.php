@@ -24,3 +24,5 @@ Route::post('/new','articleCont@addArticle');
 
 Route::get('/read/{id}','articleCont@readArticle')->name('read');
 Route::post('/read/{id}','articleCont@readArticle');
+Route::get('/showArticles','articleCont@showUserArticles')->name('show');
+Route::post('/showArticles/{id}','articleCont@delArticle')->name('del');

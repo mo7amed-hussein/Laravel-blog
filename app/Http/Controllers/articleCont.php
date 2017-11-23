@@ -9,6 +9,11 @@ use App\Comment;
 class articleCont extends Controller
 {
     //
+    public function __construct()
+    {
+
+       $this->middleware('auth');
+    }
     public function addArticle(Request $request)
     {
     	if($request->isMethod('post'))
@@ -19,6 +24,7 @@ class articleCont extends Controller
     		$article->user_id =Auth::user()->id;
     		$article->save();
     		//rediect('');
+            return redirect()->route('home');
     	}
     	return view('newArticle');
     }
@@ -36,6 +42,19 @@ class articleCont extends Controller
         }
         $ar = Article::find($id);
         return view('viewArticle',['article'=>$ar]);
+    }
+
+    public function showUserArticles()
+    {
+       
+        $ar = Article::where('user_id',Auth::user()->id)->get();
+        return view('userArticles',['articles'=>$ar]);  
+    }
+    public function delArticle(Request $request,$id)
+    {
+        $ar = Article::where('id',$id)->first();
+        $ar->delete();
+        return redirect()->route('show');
     }
    
 }

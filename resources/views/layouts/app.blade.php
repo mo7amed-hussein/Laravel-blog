@@ -50,6 +50,8 @@
                         @else
                          <li><a href="{{route('new')}}">Add Article</a></li>
 
+                         <li><a href="{{route('show')}}">My Articles</a></li>
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col col-md-8">
+        <div class="col col-md-10 col-md-offset-1">
             @foreach($articles as $ar)
 
         <article class="article-block">
@@ -27,28 +27,14 @@
              <a href="{{ route('read',['id'=> $ar->id])}} ">Read More</a>';
                 
             </div>
+            <form action="{{ route('del',['id'=> $ar->id])}}" method="post">
+              {{csrf_field()}}
+              <button class="btn btn-danger">Delete</button>
+            </form>
         </article>
 
         @endforeach
         </div>
-        <div class="col col-md-4">
-
-          
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Recent Comments</h3>
-                </div>
-                <div class="panel-body">
-                  <table class="table">
-                  @foreach($comments as $c)
-               <tr><td> <p>{{$c->body}}</p>
-                    by {{$c->user->name}} on {{date('F d, Y', strtotime($c->created_at))}}
-                </td></tr>
-               @endforeach
-               </table>
-                </div>
-          </div>
-               
         
         </div>
     </div>
