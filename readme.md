@@ -6,3 +6,8 @@ blog has the following features
 	*	add articles 
 	*	read articles 
 	*	comments
+	
+screenshots
+==========
+![demo Screenshots]( https://github.com/mo7amed-hussein/Laravel-blog/blob/master/pic/shots.gif?raw=true )	
+	
